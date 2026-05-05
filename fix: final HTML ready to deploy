@@ -1,68 +1,163 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Adi Setiyawan</title>
+    <title>CV Adi Setiyawan</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background: #f0f2f5;
-            color: #333;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
-        h1 { color: #0077b6; text-align: center; }
-        img { 
-            display: block; 
-            margin: 0 auto; 
-            border-radius: 50%; 
-            border: 3px solid #0077b6;
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
         }
-        h2 { 
-            color: #0077b6; 
-            border-bottom: 2px solid #0077b6; 
-            padding-bottom: 5px;
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 20px;
+            display: block;
+            object-fit: cover;
         }
-        a { 
-            color: #0077b6; 
-            text-decoration: none; 
-            font-weight: bold;
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { padding: 40px; }
+        .section { margin-bottom: 30px; }
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
         }
-        ul { background: white; padding: 15px 30px; border-radius: 8px; }
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .contact-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .contact-item strong { color: #2c3e50; }
+        ul { list-style: none; }
+        li {
+            background: #f8f9fa;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill {
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        @media (max-width: 600px) {
+            .header h1 { font-size: 2em; }
+            .content { padding: 20px; }
+            .contact-info { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <h1>Adi Setiyawan</h1>
-    <img src="foto-adi.jpg" alt="Foto Profil" width="150">
-    
-    <h2>Tentang Saya</h2>
-    <p>Saya seorang karyawan swasta, sedang belajar Web Development untuk berkarir di bidang IT.</p>
- 
-    <h2>Kontak</h2>
-    <p>📧 Email: <a href="mailto:adi.setiyawan.dev@gmail.com">adi.setiyawan.dev@gmail.com</a></p>
-    <p>📍 Lokasi: Sragen, Jawa Tengah</p>
+    <div class="container">
+        <div class="header">
+            <img src="https://via.placeholder.com/150" alt="Foto Profil" class="profile-img">
+            <h1>ADI SETIYAWAN</h1>
+            <p>Professional Title / Posisi yang Diinginkan</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Kontak</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Email:</strong> email@kamu.com
+                    </div>
+                    <div class="contact-item">
+                        <strong>Telepon:</strong> +62 812-3456-7890
+                    </div>
+                    <div class="contact-item">
+                        <strong>LinkedIn:</strong> linkedin.com/in/username
+                    </div>
+                    <div class="contact-item">
+                        <strong>Alamat:</strong> Sukoharjo, Jawa Tengah
+                    </div>
+                </div>
+            </div>
 
-    <h2>Pengalaman Kerja</h2>
-    <h3>Admin & Kurir</h3>
-    <p><b>PT Sama Sama Untung</b> | 2025 - Sekarang</p>
-    <ul>
-        <li>Stock opname, dan merekap setiap barang yang masuk, keluar, dan orderan setiap harinya</li>
-        <li>Memastikan target kiriman & kuantitas tercapai</li>
-        <li>Mengefisienkan waktu kirim, dan membaca maps secara akurat</li>
-        <li>Menjalin komunikasi yang baik dengan para customer</li>
-    </ul>
- 
-    <h2>Pendidikan</h2>
-    <h3>SMKN 9 Surakarta</h3>
-    <p>Lulus 2022 | Jurusan: Animasi</p>
+            <div class="section">
+                <h2>Tentang Saya</h2>
+                <p>Tulis deskripsi singkat tentang diri kamu, keahlian utama, dan tujuan karir. Buat 2-3 kalimat yang menarik.</p>
+            </div>
 
-    <h2>Proyek</h2>
-    <ul>
-        <li><b>Website CV Online</b> - 2026</li>
-        <li>Membangun & mendeploy website portfolio pribadi menggunakan HTML, CSS, dan GitHub Pages</li>
-    </ul>
-    
+            <div class="section">
+                <h2>Pengalaman Kerja</h2>
+                <ul>
+                    <li>
+                        <strong>Nama Posisi</strong> - Nama Perusahaan<br>
+                        <em>Jan 2023 - Sekarang</em><br>
+                        Deskripsi tugas dan pencapaian kamu di posisi ini.
+                    </li>
+                    <li>
+                        <strong>Nama Posisi Lama</strong> - Perusahaan Lama<br>
+                        <em>Jan 2021 - Des 2022</em><br>
+                        Deskripsi tugas dan pencapaian.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Pendidikan</h2>
+                <ul>
+                    <li>
+                        <strong>Gelar Sarjana</strong> - Nama Universitas<br>
+                        <em>2017 - 2021</em><br>
+                        Jurusan & IPK jika mau ditampilkan
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Keahlian</h2>
+                <div class="skills">
+                    <span class="skill">Microsoft Office</span>
+                    <span class="skill">Komunikasi</span>
+                    <span class="skill">Leadership</span>
+                    <span class="skill">Problem Solving</span>
+                    <span class="skill">Skill Kamu Lainnya</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
