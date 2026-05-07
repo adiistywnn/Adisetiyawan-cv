@@ -301,6 +301,19 @@ if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark');
     document.getElementById('themeBtn').innerHTML = '☀️ Light Mode';
 }
+    // SCRIPT TYPING EFFECT
+const text = "Adi Setiyawan";
+let i = 0;
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML = text.substring(0, i+1) + "|";
+    i++;
+    setTimeout(typeWriter, 150);
+  } else {
+    document.getElementById("typing").innerHTML = text;
+  }
+}
+window.onload = typeWriter;
 </script>
 </body>
 </html>
