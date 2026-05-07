@@ -79,29 +79,51 @@
             text-decoration: underline;
         }
         
-ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 15px;
-}
+        /* KHUSUS SKILLS GRID 2x2 */
+        ul.skills {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 15px;
+        }
         
-li {
-    background: #f8f9fa;
-    padding: 15px 20px;
-    border-radius: 10px;
-    border-left: 4px solid #667eea;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
+        ul.skills li {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
         
-li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
-    border-left: 4px solid #764ba2;
-}
+        ul.skills li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+            border-left: 4px solid #764ba2;
+        }
+
+        /* LIST BIASA BUAT PENGALAMAN & PROYEK */
+        ul:not(.skills) {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        ul:not(.skills) li {
+            margin-bottom: 8px;
+            background: none;
+            padding: 0;
+            border: none;
+            font-weight: normal;
+        }
+        ul:not(.skills) li:hover {
+            transform: none;
+            box-shadow: none;
+        }
 
         .contact p {
             margin: 10px 0;
@@ -133,7 +155,8 @@ li:hover {
         body.dark .social-icons a:hover {
             color: #a5b4fc;
         }
-                /* DARK MODE */
+        
+        /* DARK MODE */
         body.dark {
             background: #0f172a;
             color: #e2e8f0;
@@ -155,15 +178,17 @@ li:hover {
         body.dark a {
             color: #818cf8;
         }
-                body.dark li {
+        body.dark ul.skills li {
             background: #334155;
             color: #e2e8f0;
             border-left: 4px solid #818cf8;
         }
-        
-        body.dark li:hover {
+        body.dark ul.skills li:hover {
             box-shadow: 0 10px 20px rgba(129, 140, 248, 0.15);
             border-left: 4px solid #a5b4fc;
+        }
+        body.dark ul:not(.skills) {
+            background: #334155;
         }
         body.dark strong {
             color: #f1f5f9;
@@ -198,52 +223,49 @@ li:hover {
             <img src="foto-adi.jpg" alt="foto-adi.jpg">
             <h1>Adi Setiyawan</h1>
             <p>Karyawan Swasta | Web Development Enthusiast</p>  
-            <!-- TOMBOL DARK MODE -->
             <div class="theme-toggle">
                 <button onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
             </div>
         </div>
        
-        
         <div class="content">
             <h2>Tentang Saya</h2>
             <p>Saya adalah seorang karyawan swasta, sedang belajar Web Development untuk berkarir di bidang IT.</p>
  
             <h2>Kontak</h2>
             <div class="contact">
-            <p>Hubungi saya:</p>
-            <div class="social-icons">
-                <a href="mailto:adi.setiyawan.dev@gmail.com" target="_blank">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                
-                <a href="https://github.com/adiistywnn" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://wa.me/6285816037370" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-        </div>
-                <!-- TOMBOL DOWNLOAD PDF -->
-                <div style="text-align: center; margin-top: 15px; margin-bottom: 10px;">
-                    <a href="#" onclick="window.print(); return false;" 
-                       style="display: inline-block; background: #667eea; color: white; padding: 12px 25px; 
-                              border-radius: 50px; text-decoration: none; font-weight: 600;">
-                        📄 Download PDF
+                <p>Hubungi saya:</p>
+                <div class="social-icons">
+                    <a href="mailto:adi.setiyawan.dev@gmail.com" target="_blank">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/adiistywnn" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://wa.me/6285816037370" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
             </div>
-<h2>Keahlian</h2>
-<ul class="skills">
+            <div style="text-align: center; margin-top: 15px; margin-bottom: 10px;">
+                <a href="#" onclick="window.print(); return false;" 
+                   style="display: inline-block; background: #667eea; color: white; padding: 12px 25px; 
+                          border-radius: 50px; text-decoration: none; font-weight: 600;">
+                    📄 Download PDF
+                </a>
+            </div>
+            
+            <h2>Keahlian</h2>
+            <ul class="skills">
                 <li>HTML & CSS</li>
                 <li>Git & GitHub</li>
                 <li>Microsoft Office</li>
                 <li>Kerja Tim & Disiplin</li>
             </ul>
+            
             <h2>Pengalaman Kerja</h2>
             <h3>Admin dan Kurir</h3>
-            <p><b>PT Sama Sama Untung</b> | 2025 - Sekarang</p>
+            <p><b>PT Sama Sama Untung</b> | 2024 - Sekarang</p>
             <ul>
                 <li>Stok opname setiap barang masuk dan keluar</li>
                 <li>Merekap setiap orderan, masuk dan keluar</li>
@@ -254,6 +276,7 @@ li:hover {
             <h2>Pendidikan</h2>
             <h3>SMKN 9 Surakarta | 2022</h3>
             <p>Jurusan: Animasi</p>
+            
             <h2>Proyek</h2>
             <ul>
                 <li><b>Website CV Online</b> - 2026</li>
@@ -261,7 +284,7 @@ li:hover {
             </ul>
         </div>
     </div>
- <script>
+<script>
 function toggleTheme() {
     const body = document.body;
     const btn = document.getElementById('themeBtn');
