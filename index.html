@@ -164,5 +164,23 @@
             </ul>
         </div>
     </div>
+ <script>
+function toggleTheme() {
+    const body = document.body;
+    const btn = document.getElementById('themeBtn');
+    body.classList.toggle('dark');
+    if (body.classList.contains('dark')) {
+        btn.innerHTML = '☀️ Light Mode';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        btn.innerHTML = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
+    }
+}
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+    document.getElementById('themeBtn').innerHTML = '☀️ Light Mode';
+}
+</script>
 </body>
 </html>
