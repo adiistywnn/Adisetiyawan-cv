@@ -1,9 +1,10 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Adi Setiyawan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -14,6 +15,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
+            transition: background 0.4s ease, color 0.4s ease;
         }
         
         .container {
@@ -23,6 +25,7 @@
             border-radius: 15px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             overflow: hidden;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
         }
         
         .header {
@@ -30,6 +33,7 @@
             color: white;
             text-align: center;
             padding: 40px 20px;
+            transition: background 0.4s ease;
         }
         
         .header img {
@@ -57,6 +61,7 @@
             padding-bottom: 10px;
             margin: 30px 0 20px 0;
             font-size: 1.5em;
+            transition: color 0.4s ease, border-color 0.4s ease;
         }
         
         h3 {
@@ -79,6 +84,7 @@
             padding: 20px 40px;
             border-radius: 10px;
             border-left: 4px solid #667eea;
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
         
         li {
@@ -89,11 +95,36 @@
             margin: 10px 0;
             font-size: 1.1em;
         }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            font-size: 32px;
+            color: #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #764ba2;
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        body.dark .social-icons a {
+            color: #818cf8;
+        }
+
+        body.dark .social-icons a:hover {
+            color: #a5b4fc;
+        }
                 /* DARK MODE */
         body.dark {
             background: #0f172a;
             color: #e2e8f0;
-            transition: all 0.3s ease;
         }
         body.dark .container {
             background: #1e293b;
@@ -163,18 +194,20 @@
  
             <h2>Kontak</h2>
             <div class="contact">
-                                <p>📧 Email: <a href="mailto:adi.setiyawan.dev@gmail.com">adi.setiyawan.dev@gmail.com</a></p>
-                <p>📍 Lokasi: Sragen, Jawa Tengah</p>
-                            
-                <!-- TOMBOL WHATSAPP -->
-                <div style="text-align: center; margin-top: 25px;">
-                    <a href="https://wa.me/6285816037370?text=Halo%20Adi,%20saya%20tertarik%20dengan%20CV%20Anda" 
-                       style="display: inline-block; background: #25D366; color: white; padding: 12px 25px; 
-                              border-radius: 50px; text-decoration: none; font-weight: 600;">
-                        💬 Chat WhatsApp Saya
-                    </a>
-                </div>
+            <p>Hubungi saya:</p>
+            <div class="social-icons">
+                <a href="mailto:adi.setiyawan.dev@gmail.com" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                </a>
                 
+                <a href="https://github.com/adiistywnn" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://wa.me/6285816037370" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
                 <!-- TOMBOL DOWNLOAD PDF -->
                 <div style="text-align: center; margin-top: 15px; margin-bottom: 10px;">
                     <a href="#" onclick="window.print(); return false;" 
