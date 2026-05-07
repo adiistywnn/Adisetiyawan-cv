@@ -79,18 +79,30 @@
             text-decoration: underline;
         }
         
-        ul {
-            background: #f8f9fa;
-            padding: 20px 40px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-            transition: background 0.4s ease, border-color 0.4s ease;
-        }
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
         
-        li {
-            margin-bottom: 8px;
-        }
+li {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
         
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+    border-left: 4px solid #764ba2;
+}
+
         .contact p {
             margin: 10px 0;
             font-size: 1.1em;
