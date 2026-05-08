@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('themeBtn').innerHTML = '☀️ Light Mode';
     }
 
-    // TYPING LOOP MULTI TEXT - UPGRADE LEVEL 2
+    // TYPING LOOP MULTI TEXT - FIXED VERSION
     const texts = ["Adi Setiyawan", "Web Developer", "Tech Enthusiast", "Coffee Addict"];
     let textIndex = 0;
     let charIndex = 0;
@@ -350,35 +350,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const delayBetween = 2000;
 
     function typeLoop() {
-    const currentText = texts[textIndex];
+        const currentText = texts[textIndex];
 
-    if (isDeleting) {
-        charIndex--;
-        typingElement.innerHTML = currentText.substring(0, charIndex);
-    } else {
-        let html = '';
-        for (let i = 0; i <= charIndex; i++) {
-            if (currentText[i]) {
-                html += `<span class="char" style="animation-delay: ${i * 0.03}s">${currentText[i]}</span>`;
+        if (isDeleting) {
+            charIndex--;
+            if (charIndex < 0) charIndex = 0;
+            typingElement.innerHTML = currentText.substring(0, charIndex);
+        } else {
+            let html = '';
+            for (let i = 0; i < charIndex; i++) {
+                if (currentText[i]) {
+                    html += `<span class="char" style="animation-delay: ${i * 0.03}s">${currentText[i]}</span>`;
+                }
             }
+            typingElement.innerHTML = html;
+            charIndex++;
         }
-        typingElement.innerHTML = html;
-        charIndex++;
-    }
 
-    let typeTimeout = isDeleting? deletingSpeed : typingSpeed;
+        let typeTimeout = isDeleting? deletingSpeed : typingSpeed;
 
-    if (!isDeleting && charIndex === currentText.length) {
-        typeTimeout = delayBetween;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % texts.length;
-        typeTimeout = 500;
-    }
-
-    setTimeout(typeLoop, typeTimeout);
-}
+        if (!isDeleting && charIndex > currentText.length) {
+            charIndex = currentText.length;
+            typeTimeout = delayBetween;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            typeTimeout = 500;
+        }
 
         setTimeout(typeLoop, typeTimeout);
     }
