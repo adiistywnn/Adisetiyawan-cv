@@ -350,26 +350,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const delayBetween = 2000;
 
     function typeLoop() {
-        const currentText = texts[textIndex];
+    const currentText = texts[textIndex];
 
-        if (isDeleting) {
-            typingElement.innerHTML = currentText.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            typingElement.innerHTML = currentText.substring(0, charIndex + 1);
-            charIndex++;
+    if (isDeleting) {
+        charIndex--;
+        typingElement.innerHTML = currentText.substring(0, charIndex);
+    } else {
+        let html = '';
+        for (let i = 0; i <= charIndex; i++) {
+            if (currentText[i]) {
+                html += `<span class="char" style="animation-delay: ${i * 0.03}s">${currentText[i]}</span>`;
+            }
         }
+        typingElement.innerHTML = html;
+        charIndex++;
+    }
 
-        let typeTimeout = isDeleting? deletingSpeed : typingSpeed;
+    let typeTimeout = isDeleting? deletingSpeed : typingSpeed;
 
-        if (!isDeleting && charIndex === currentText.length) {
-            typeTimeout = delayBetween;
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            textIndex = (textIndex + 1) % texts.length;
-            typeTimeout = 500;
-        }
+    if (!isDeleting && charIndex === currentText.length) {
+        typeTimeout = delayBetween;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        typeTimeout = 500;
+    }
+
+    setTimeout(typeLoop, typeTimeout);
+}
 
         setTimeout(typeLoop, typeTimeout);
     }
