@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -17,8 +17,8 @@
             padding: 20px;
             transition: background 0.4s ease, color 0.4s ease;
         }
-        
-        .container {
+
+       .container {
             max-width: 800px;
             margin: 0 auto;
             background: white;
@@ -27,16 +27,16 @@
             overflow: hidden;
             transition: background 0.4s ease, box-shadow 0.4s ease;
         }
-        
-        .header {
+
+       .header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
             padding: 40px 20px;
             transition: background 0.4s ease;
         }
-        
-        .header img {
+
+       .header img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
@@ -45,16 +45,16 @@
             object-fit: cover;
             background: #ddd;
         }
-        
-        .header h1 {
+
+       .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
         }
-        
-        .content {
+
+       .content {
             padding: 40px;
         }
-        
+
         h2 {
             color: #667eea;
             border-bottom: 3px solid #667eea;
@@ -63,23 +63,22 @@
             font-size: 1.5em;
             transition: color 0.4s ease, border-color 0.4s ease;
         }
-        
+
         h3 {
             color: #764ba2;
             margin: 20px 0 10px 0;
         }
-        
+
         a {
             color: #667eea;
             text-decoration: none;
             font-weight: bold;
         }
-        
+
         a:hover {
             text-decoration: underline;
         }
-        
-        /* KHUSUS SKILLS GRID 2x2 */
+
         ul.skills {
             list-style: none;
             padding: 0;
@@ -88,7 +87,7 @@
             gap: 12px;
             margin-top: 15px;
         }
-        
+
         ul.skills li {
             background: #f8f9fa;
             padding: 15px 20px;
@@ -98,21 +97,20 @@
             transition: all 0.3s ease;
             text-align: center;
         }
-        
+
         ul.skills li:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
             border-left: 4px solid #764ba2;
         }
 
-        /* LIST BIASA BUAT PENGALAMAN & PROYEK */
         ul:not(.skills) {
             background: #f8f9fa;
             padding: 20px 40px;
             border-radius: 10px;
             border-left: 4px solid #667eea;
         }
-        
+
         ul:not(.skills) li {
             margin-bottom: 8px;
             background: none;
@@ -125,47 +123,46 @@
             box-shadow: none;
         }
 
-        .contact p {
+       .contact p {
             margin: 10px 0;
             font-size: 1.1em;
         }
 
-        .social-icons {
+       .social-icons {
             display: flex;
             justify-content: center;
             gap: 25px;
             margin-top: 15px;
         }
 
-        .social-icons a {
+       .social-icons a {
             font-size: 32px;
             color: #667eea;
             transition: all 0.3s ease;
         }
 
-        .social-icons a:hover {
+       .social-icons a:hover {
             color: #764ba2;
             transform: translateY(-5px) scale(1.1);
         }
 
-        body.dark .social-icons a {
+        body.dark.social-icons a {
             color: #818cf8;
         }
 
-        body.dark .social-icons a:hover {
+        body.dark.social-icons a:hover {
             color: #a5b4fc;
         }
-        
-        /* DARK MODE */
+
         body.dark {
             background: #0f172a;
             color: #e2e8f0;
         }
-        body.dark .container {
+        body.dark.container {
             background: #1e293b;
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-        body.dark .header {
+        body.dark.header {
             background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
         }
         body.dark h2 {
@@ -193,11 +190,11 @@
         body.dark strong {
             color: #f1f5f9;
         }
-        .theme-toggle {
+       .theme-toggle {
             text-align: center;
             margin: 20px 0 0 0;
         }
-        .theme-toggle button {
+       .theme-toggle button {
             background: #6366f1;
             color: white;
             border: none;
@@ -207,10 +204,10 @@
             font-weight: 600;
             font-size: 14px;
         }
-        .theme-toggle button:hover {
+       .theme-toggle button:hover {
             background: #4f46e5;
         }
-      .cursor {
+     .cursor {
     display: inline-block;
     animation: blink 1s infinite;
     color: white;
@@ -242,7 +239,7 @@
     51%, 100% { opacity: 0; }
 }
 
-body.dark .cursor {
+body.dark.cursor {
     color: #e2e8f0;
 }
         /* SCROLL REVEAL EFFECT */
@@ -258,8 +255,8 @@ body.dark .cursor {
 }
         @media (max-width: 600px) {
             body { padding: 10px; }
-            .content { padding: 20px; }
-            .header h1 { font-size: 2em; }
+           .content { padding: 20px; }
+           .header h1 { font-size: 2em; }
         }
     </style>
 </head>
@@ -268,18 +265,18 @@ body.dark .cursor {
         <div class="header">
             <img src="foto-adi.jpg" alt="foto-adi.jpg">
             <h1><span id="typing"></span><span class="cursor">|</span></h1>
-            <p>Karyawan Swasta | Web Development Enthusiast</p>  
+            <p>Karyawan Swasta | Web Development Enthusiast</p>
             <div class="theme-toggle">
                 <button onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
             </div>
         </div>
-       
+
         <div class="content">
-            <h2>Tentang Saya</h2>
-            <p>Saya adalah seorang karyawan swasta, sedang belajar Web Development untuk berkarir di bidang IT.</p>
- 
-            <h2>Kontak</h2>
-            <div class="contact">
+            <h2 class="reveal">Tentang Saya</h2>
+            <p class="reveal">Saya adalah seorang karyawan swasta, sedang belajar Web Development untuk berkarir di bidang IT.</p>
+
+            <h2 class="reveal">Kontak</h2>
+            <div class="contact reveal">
                 <p>Hubungi saya:</p>
                 <div class="social-icons">
                     <a href="mailto:adi.setiyawan.dev@gmail.com" target="_blank">
@@ -293,38 +290,38 @@ body.dark .cursor {
                     </a>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 15px; margin-bottom: 10px;">
-                <a href="#" onclick="window.print(); return false;" 
-                   style="display: inline-block; background: #667eea; color: white; padding: 12px 25px; 
+            <div class="reveal" style="text-align: center; margin-top: 15px; margin-bottom: 10px;">
+                <a href="#" onclick="window.print(); return false;"
+                   style="display: inline-block; background: #667eea; color: white; padding: 12px 25px;
                           border-radius: 50px; text-decoration: none; font-weight: 600;">
                     📄 Download PDF
                 </a>
             </div>
-            
-            <h2>Keahlian</h2>
-            <ul class="skills">
+
+            <h2 class="reveal">Keahlian</h2>
+            <ul class="skills reveal">
                 <li>HTML & CSS</li>
                 <li>Git & GitHub</li>
                 <li>Microsoft Office</li>
                 <li>Kerja Tim & Disiplin</li>
             </ul>
-            
-            <h2>Pengalaman Kerja</h2>
-            <h3>Admin dan Kurir</h3>
-            <p><b>PT Sama Sama Untung</b> | 2024 - Sekarang</p>
-            <ul>
+
+            <h2 class="reveal">Pengalaman Kerja</h2>
+            <h3 class="reveal">Admin dan Kurir</h3>
+            <p class="reveal"><b>PT Sama Sama Untung</b> | 2024 - Sekarang</p>
+            <ul class="reveal">
                 <li>Stok opname setiap barang masuk dan keluar</li>
                 <li>Merekap setiap orderan, masuk dan keluar</li>
                 <li>Mengantarkan barang sesuai dengan yang dipesan, dan memastikan sampai alamat tujuan dengan aman</li>
                 <li>Cek kualitas dan kuantitas produk</li>
             </ul>
- 
-            <h2>Pendidikan</h2>
-            <h3>SMKN 9 Surakarta | 2022</h3>
-            <p>Jurusan: Animasi</p>
-            
-            <h2>Proyek</h2>
-            <ul>
+
+            <h2 class="reveal">Pendidikan</h2>
+            <h3 class="reveal">SMKN 9 Surakarta | 2022</h3>
+            <p class="reveal">Jurusan: Animasi</p>
+
+            <h2 class="reveal">Proyek</h2>
+            <ul class="reveal">
                 <li><b>Website CV Online</b> - 2026</li>
                 <li>Membuat website CV pribadi menggunakan HTML dan di-hosting di GitHub Pages. <a href="https://adiistywnn.github.io/">Lihat Website</a></li>
             </ul>
@@ -397,6 +394,23 @@ document.addEventListener('DOMContentLoaded', function() {
         typingElement.innerHTML = "";
         setTimeout(typeLoop, 1000);
     }
+
+    // SCROLL REVEAL - TAMBAHAN BARU
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+        reveals.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
 });
 </script>
 
